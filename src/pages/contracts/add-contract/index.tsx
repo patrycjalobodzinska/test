@@ -243,7 +243,6 @@ const Excel: NextPageWithLayout = () => {
               )}
             </div>
             <div className="flex items-end justify-end">
-              {" "}
               <Button disabled={!(criteriaList?.length > 0)} type="submit">
                 Zapisz przetarg
               </Button>
