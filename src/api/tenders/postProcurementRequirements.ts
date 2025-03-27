@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from "axios";
 import { z } from "zod";
 
-export const editProcurementRequirementsSchema = z.object({
+export const addProcurementRequirementsSchema = z.object({
   projectName: z
     .string({
       required_error: "Pole wymagane",
@@ -37,15 +37,15 @@ export const editProcurementRequirementsSchema = z.object({
     .transform((val) => Number(val)),
 });
 
-export type editProcurementRequirementsFormFields = z.infer<
-  typeof editProcurementRequirementsSchema
+export type AddProcurementRequirementsFormFields = z.infer<
+  typeof addProcurementRequirementsSchema
 >;
 
-export type editProcurementRequirementsResponse = { id: string };
+export type AddProcurementRequirementsResponse = { id: string };
 
-export const editProcurementRequirements = (
-  data: editProcurementRequirementsFormFields
-): Promise<AxiosResponse<editProcurementRequirementsResponse>["data"]> => {
+export const addProcurementRequirements = (
+  data: AddProcurementRequirementsFormFields
+): Promise<AxiosResponse<AddProcurementRequirementsResponse>["data"]> => {
   return axios({
     method: "POST",
     url: `${process.env.NEXT_PUBLIC_API_URL}/api/tenders/procurement-requirements`,
