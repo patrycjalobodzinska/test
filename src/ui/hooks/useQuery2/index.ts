@@ -1,0 +1,1 @@
+export { useQuery2 } from './useQuery2'
